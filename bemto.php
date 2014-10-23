@@ -63,11 +63,4 @@ function mixin__e($block = null, $attributes = null, $tag = null) {
 	mixin__b($block, $attributes, $tag, true);
 }
 
-function mixin__i($block = null, $attributes = null) {
-	$dataArgs = array_slice(func_get_args(), 2);
-	echo "[INCLUDE HERE]";
-}
-
-include 'breadcrumbs.php';
-
 ?>
