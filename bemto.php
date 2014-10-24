@@ -8,6 +8,7 @@ function mixin__b($block = null, $attributes = null, $tag = null, $isElement = f
 	global $__bem_chain_contexts;
 	global $__bem_inline_tags;
 	if (!$__bem_chain) $__bem_chain = array();
+
 	if (!$__bem_chain_contexts) $__bem_chain_contexts = array();
 	if (!$tag) {
 		if (count($__bem_chain_contexts) > 0) {
@@ -27,6 +28,7 @@ function mixin__b($block = null, $attributes = null, $tag = null, $isElement = f
 		$newContext = 'inline';
 	}
 	array_push($__bem_chain_contexts, $newContext);
+
 	$blockAttrs = array();
 	$name = null;
 	if ($attributes) {
@@ -57,6 +59,7 @@ function mixin__b($block = null, $attributes = null, $tag = null, $isElement = f
 	if (is_callable($block)) $block();
 	echo '</' . $tag . '>';
 	if (!$isElement) array_pop($__bem_chain);
+	array_pop($__bem_chain_contexts);
 }
 
 function mixin__e($block = null, $attributes = null, $tag = null) {
