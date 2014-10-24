@@ -21,6 +21,9 @@ function mixin__b($block = null, $attributes = null, $tag = null, $isElement = f
 			$tag = "div";
 		}
 	}
+	if (($tag == 'div' || $tag == 'span') && $attributes['href']) {
+		$tag = "a";
+	}
 	$newContext = 'block';
 	if ($tag == 'ul' || $tag == 'ol') {
 		$newContext = 'list';
@@ -35,6 +38,7 @@ function mixin__b($block = null, $attributes = null, $tag = null, $isElement = f
 		foreach ($attributes as $key => $value) {
 			if ($key == 'class') {
 				$classes = is_array($value) ? $value : explode(" ", $value);
+				// print_r($classes);
 				$name = array_shift($classes);
 				if ($isElement) {
 					$name = $__bem_chain[count($__bem_chain) - 1] . '__' . $name;
